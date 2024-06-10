@@ -1,0 +1,27 @@
+name: Build and Push Docker Images to Docker Hub
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  push_to_registry:
+    name: Build & Push Docker images to Docker Hub
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Login to docker registry
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build & push Docker image (ubuntu 22.04)
+        uses: docker/build-push-action@v5
+        with:
+          context: ubuntu22.04
+          push: true
+          tags: frozenverse/node20-puppeteer-opencv4:latest
