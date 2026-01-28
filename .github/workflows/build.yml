@@ -1,4 +1,4 @@
-name: Build and Push Docker Images to Docker Hub
+name: Build & Push Docker Image
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   push_to_registry:
-    name: Build & Push Docker images to Docker Hub
+    name: Build & Push Docker Image
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -24,4 +24,4 @@ jobs:
         with:
           context: ubuntu22.04
           push: true
-          tags: frozenverse/node20-puppeteer-opencv4:latest
+          tags: frozenverse/node22-puppeteer-opencv4:latest
