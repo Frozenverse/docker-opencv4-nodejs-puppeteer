@@ -1,7 +1,7 @@
 FROM ubuntu:22.04
 
-ARG NODE_VERSION=20
-ARG OPENCV_VERSION=4.9.0
+ARG NODE_VERSION=22
+ARG OPENCV_VERSION=4.13.0
 
 # Install Pre-requisites
 RUN apt-get update && apt-get install -y curl wget build-essential g++ cmake unzip
