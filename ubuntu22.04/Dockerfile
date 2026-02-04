@@ -38,8 +38,12 @@ ARG NODE_VERSION=22
 
 # Install Puppeteer Dependencies and OpenCV runtime dependencies
 RUN apt-get update && apt-get install -y \
+    build-essential \
+    cmake \
     curl \
+    g++ \
     git \
+    unzip \
     wget \
     fonts-liberation \
     gconf-service \
