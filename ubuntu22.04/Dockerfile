@@ -5,11 +5,17 @@ ARG OPENCV_VERSION=4.13.0
 
 # Install build dependencies
 RUN apt-get update && apt-get install -y \
+    git \
     build-essential \
     cmake \
     g++ \
     wget \
     unzip \
+    ffmpeg \
+    mesa-common-dev \ 
+    libgl1-mesa-dev \ 
+    libglx-dev \ 
+    libglfw3-dev \
     libgtk-3-dev \
     libpng-dev \
     libjpeg-dev
@@ -38,6 +44,7 @@ ARG NODE_VERSION=22
 
 # Install Puppeteer Dependencies and OpenCV runtime dependencies
 RUN apt-get update && apt-get install -y \
+    git \
     build-essential \
     cmake \
     curl \
@@ -45,6 +52,12 @@ RUN apt-get update && apt-get install -y \
     git \
     unzip \
     wget \
+    ffmpeg \
+    mesa-common-dev \ 
+    libgl1-mesa-dev \ 
+    libglx-dev \ 
+    libglfw3-dev \
+    libgtk-3-dev \
     fonts-liberation \
     gconf-service \
     libappindicator1 \
