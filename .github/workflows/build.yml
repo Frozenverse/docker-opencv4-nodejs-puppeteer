@@ -19,9 +19,9 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build & push Docker image (ubuntu 22.04)
+      - name: Build & push Docker image (ubuntu 24.04)
         uses: docker/build-push-action@v5
         with:
           context: ubuntu22.04
           push: true
-          tags: frozenverse/node22-puppeteer-opencv4:latest
+          tags: frozenverse/node24-puppeteer-opencv4:latest

@@ -1,5 +1,5 @@
 # Stage 1: Build OpenCV
-FROM ubuntu:22.04 AS builder
+FROM ubuntu:24.04 AS builder
 
 ARG OPENCV_VERSION=4.13.0
 
@@ -12,9 +12,9 @@ RUN apt-get update && apt-get install -y \
     wget \
     unzip \
     ffmpeg \
-    mesa-common-dev \ 
-    libgl1-mesa-dev \ 
-    libglx-dev \ 
+    mesa-common-dev \
+    libgl1-mesa-dev \
+    libglx-dev \
     libglfw3-dev \
     libgtk-3-dev \
     libpng-dev \
@@ -38,9 +38,9 @@ RUN mkdir -p /opencv && \
     cd / && rm -rf /opencv
 
 # Stage 2: Runtime image
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 
-ARG NODE_VERSION=22
+ARG NODE_VERSION=24
 
 # Install Puppeteer Dependencies and OpenCV runtime dependencies
 RUN apt-get update && apt-get install -y \
@@ -49,26 +49,23 @@ RUN apt-get update && apt-get install -y \
     cmake \
     curl \
     g++ \
-    git \
     unzip \
     wget \
     ffmpeg \
-    mesa-common-dev \ 
-    libgl1-mesa-dev \ 
-    libglx-dev \ 
+    mesa-common-dev \
+    libgl1-mesa-dev \
+    libglx-dev \
     libglfw3-dev \
     libgtk-3-dev \
     fonts-liberation \
-    gconf-service \
-    libappindicator1 \
-    libasound2 \
-    libatk1.0-0 \
+    libasound2t64 \
+    libatk1.0-0t64 \
     libcairo2 \
-    libcups2 \
+    libcups2t64 \
     libfontconfig1 \
     libgbm-dev \
-    libgdk-pixbuf2.0-0 \
-    libgtk-3-0 \
+    libgdk-pixbuf-2.0-0 \
+    libgtk-3-0t64 \
     libicu-dev \
     libjpeg-dev \
     libnspr4 \
